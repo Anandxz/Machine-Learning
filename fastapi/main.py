@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 
-
+print("Hello")
 
 @app.get('/about')
 def about():
