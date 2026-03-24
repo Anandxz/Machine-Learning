@@ -5,14 +5,12 @@ app = FastAPI()
 
 
 @app.get("/")
-
-print("Hello") hk
+def home():
+    return {"message":"Hello"}
 
 @app.get('/about')
 def about():
     return {'message':"This is the seconf api "}
-
-def 
 
 @app.get('/patient/{patient_id}')
 def view_patient(patient_id : str = Path(..., description ='Id of the patient',example = 'P100343')):
