@@ -12,6 +12,12 @@ def home():
 def about():
     return {'message':"This is the seconf api "}
 
+def load_data():
+    return {
+        "P100343": {"name": "John", "age": 30},
+        "P100344": {"name": "Alice", "age": 25}
+    }
+
 @app.get('/patient/{patient_id}')
 def view_patient(patient_id : str = Path(..., description ='Id of the patient',example = 'P100343')):
     # loading all data
@@ -20,5 +26,4 @@ def view_patient(patient_id : str = Path(..., description ='Id of the patient',e
     if patient_id in data:
         return data[patient_id]
     raise HTTPException(status_code=404,detail="Patient Not found")
-            HTTPException()
     
